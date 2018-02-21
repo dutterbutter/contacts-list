@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-
+import { connect } from 'react-redux';
 import classes from "./Contact.css";
 import Avatar from "../UI/Avatar/Avatar";
 import ContactControls from "../../containers/contacts/ContactControls";
 import ContactModal from "../UI/Modal/ContactModal";
 import ShowContact from "./ShowContact";
+
+
 
 class Contact extends Component {
   state = {
@@ -16,16 +18,11 @@ class Contact extends Component {
   };
 
   contactModalClosedHandler = () => {
-
-    this.setState({ 
-        contactClicked: false
-     });
-     console.log(this.state.contactClicked)
+    this.setState({contactClicked: false});
+    console.log("this function wont work", this.state.contactClicked);
   };
 
   render() {
-   
-
     let combinedClasses = [
       "col-md-3",
       "col-lg-3",
@@ -41,7 +38,8 @@ class Contact extends Component {
       <div
         className={mergedClasses.join(" ")}
         onClick={() => {
-          this.contactCardModal(this.props._id);
+          this.contactCardModal()
+
         }}
       >
         <ContactModal
@@ -58,13 +56,17 @@ class Contact extends Component {
         </ContactModal>
 
         <Avatar className={classesAvatar.join(" ")} name={this.props.name} />
-            <div className={combinedClasses.join(" ")}>{this.props.name}</div>
-            <div className={EmailViewClasses.join(" ")}>{this.props.email}</div>
-            <div className={PhoneNumberViewClasses.join(" ")}>{this.props.phoneNumber}</div>
+        <div className={combinedClasses.join(" ")}>{this.props.name}</div>
+        <div className={EmailViewClasses.join(" ")}>{this.props.email}</div>
+        <div className={PhoneNumberViewClasses.join(" ")}>
+          {this.props.phoneNumber}
+        </div>
         <ContactControls _id={this.props._id} />
       </div>
     );
   }
 }
+
+
 
 export default Contact;

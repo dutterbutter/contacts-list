@@ -109,6 +109,7 @@ export const fetchUserFail = (err) => {
     }
 }
 
+
 export const fetchUser = () => {
     return dispatch => {
         dispatch(fetchUserStart());
@@ -122,6 +123,7 @@ export const fetchUser = () => {
         })
     }
 }
+
 
 
 export const addContact = (name, email, streetAddress, postalCode, phoneNumber, _user) => {
@@ -138,7 +140,7 @@ export const addContact = (name, email, streetAddress, postalCode, phoneNumber, 
 }
 
 export const fetchContacts = (_user) => {
-    console.log("actions", _user)
+    //console.log("actions", _user)
     return dispatch => {
         // console.log("before", getState())
         dispatch(fetchContactsStart())

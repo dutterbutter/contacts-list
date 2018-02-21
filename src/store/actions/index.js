@@ -3,5 +3,5 @@ export {
         fetchContacts,
         deletedContact,
         editContact,
-        fetchUser
+        fetchUser,
     } from './contactActions';

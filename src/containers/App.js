@@ -3,14 +3,10 @@ import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../store/actions/index";
 import { Link } from "react-router-dom";
-import AddContactButton from "../components/UI/Navigation/Button/AddContact";
-import Layout from "../hoc/Layout/Layout";
-import ContactModal from "../components/UI/Modal/ContactModal";
-import AddContactsInfo from "./contacts/Contacts";
 import ContactList from "./contacts/ContactList";
 import Aux from '../hoc/Aux/Aux';
 import TopNav from "../components/UI/Navigation/NavBar/TopNav";
-import Home from "../components/LandingPages/Home";
+import Home from "../components/LandingPage/Home";
 
 class App extends Component {
   state = {
