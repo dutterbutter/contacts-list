@@ -5,7 +5,7 @@ import Backdrop from "../Backdrop/Backdrop";
 
 
 const contactModal = (props) => {
-  console.log("modal", props.show)
+  //console.log("modal", props.show)
   return (
     
     <Aux>

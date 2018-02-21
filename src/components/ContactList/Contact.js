@@ -17,12 +17,13 @@ class Contact extends Component {
     this.setState({ contactClicked: true });
   };
 
-  contactModalClosedHandler = () => {
-    this.setState({contactClicked: false});
-    console.log("this function wont work", this.state.contactClicked);
-  };
+  contactModalClosedHandler = (e) => {
+    e.stopPropagation()
+      this.setState({contactClicked: false})
+  }
 
   render() {
+ 
     let combinedClasses = [
       "col-md-3",
       "col-lg-3",
