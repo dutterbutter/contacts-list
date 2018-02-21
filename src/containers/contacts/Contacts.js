@@ -23,7 +23,7 @@ class AddContactsInfo extends Component {
        email: {
             elementType: "input",
             elementAttr: {
-                type: 'email',
+                type: 'text',
                 placeholder: 'Email Address'
         },
     },
@@ -57,7 +57,7 @@ class AddContactsInfo extends Component {
 
    contactInfoHandler = (event) => {
         event.preventDefault();
-       //console.log(this.props.userId);
+       
 
         const contactFormData = {};
         for (let contactFormElementName in this.state.contactForm) {
@@ -92,7 +92,7 @@ class AddContactsInfo extends Component {
    }
 
     render() { 
-        
+         //console.log(this.props.auth)
         const contactFormArray = [];
         for (let key in this.state.contactForm) {
             contactFormArray.push({
@@ -130,7 +130,8 @@ class AddContactsInfo extends Component {
 const mapStateToProps = state => {
     return {
         loading: state.contact.loading,
-        userId: state.auth._id
+        userId: state.auth._id,
+        auth: state.auth
     }
 }
 

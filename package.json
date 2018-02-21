@@ -1,18 +1,29 @@
 {
-  "name": "contacts-application",
+  "name": "contacts-list",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "/auth/google": {
+      "target": "http://localhost:8080"
+    },
+    "/api/*": {
+      "target": "http://localhost:8080"
+    }
+  },
   "dependencies": {
     "autoprefixer": "7.1.6",
-    "axios": "^0.18.0",
+    "axios": "^0.17.1",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.2",
     "babel-preset-react-app": "^3.1.1",
     "babel-runtime": "6.26.0",
+    "body-parser": "^1.18.2",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chalk": "1.1.3",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
     "cors": "^2.8.4",
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
@@ -25,11 +36,13 @@
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.4.0",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "material-ui": "^0.20.0",
     "mongodb": "^3.0.2",
     "mongoose": "^5.0.6",
     "object-assign": "4.1.1",
@@ -42,7 +55,7 @@
     "react": "^16.2.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
-    "react-redux": "^5.0.7",
+    "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
@@ -58,6 +71,10 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-plugin-react": "^7.6.1"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -9,8 +9,12 @@ const authReducer = (state = {}, action) => {
     switch (action.type) {  
 
         case actionTypes.FETCH_USER_SUCCESS:
-            return action.payload || false
-      
+            return {
+                _id: action._id || false,
+                googleId: action.googleId || false,
+                idToken: action.idToken || false
+                //action.payload || false
+            }
         default: 
             return state;
     }
@@ -19,3 +23,12 @@ const authReducer = (state = {}, action) => {
 
 
 export default authReducer;
+
+
+    // case actionTypes.FETCH_USERS_SUCCESS:
+    //     return {
+    //         ...state,
+    //         _id: action._id,
+    //         googleId: action.googleId,
+    //         idToken: action.idToken
+    //     };

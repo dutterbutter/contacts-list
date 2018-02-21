@@ -1,58 +1,46 @@
-const express    = require('express');
-const mongoose   = require('mongoose');
-const cors       = require('cors');
-const axios      = require('axios');
-const Contactsdb = require('./model/Contactdb');
+const express        = require('express');
+const mongoose       = require('mongoose');
+const cors           = require('cors');
+const axios          = require('axios');
+const cookieSession  = require('cookie-session');
+const session        = require('express-session')
+const cookieParser   = require('cookie-parser')
+const bodyParser     = require('body-parser');
+const passport       = require('passport');
+const Contactsdb     = require('./model/Contactdb');
+const UsersModel     = require('./model/Users');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+//const loginRequired  = require('./middlewares/loginRequired');
+const keys           = require('./config/keys');
+require('./services/passport');
 
-PORT = process.env.PORT || 8080
+PORT = process.env.PORT || 8080 
 
 app = express();
+// app.use(express.cookieParser());
+// app.use(express.bodyParser());
+// app.use(express.session({ secret: 'anything' }));
+
+
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors());
+app.use(cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+require('./routes/authRoutes')(app);
+require('./routes/contactRoutes')(app);
 
 const MONGO_CONNECTION_STRING = 'mongodb://localhost:27017/data'
 mongoose.connect(MONGO_CONNECTION_STRING);
 const connection = mongoose.connection;
-
-app.post('/addContact', (req, res) => {
-    Contactsdb({
-        name: req.body.name,
-        email: req.body.email,
-        phoneNumber: req.body.phoneNumber,
-        streetAddress: req.body.streetAddress,
-        postalCode: req.body.postalCode
-    }).save()
-        .then(addedContact => {
-            res.json(addedContact);
-        })
-        .catch(err => {
-            console.log(err);
-            res.sendStatus(500).send("We have encountered an error")
-        })
-})
-
-app.get('/contactsList', (req, res) => {
-    Contactsdb.find({})
-        .then(contact => {
-            res.json(contact)
-        })
-        .catch(err => {
-            console.log(err)
-            res.sendStatus(500).send("We have encountered an issue");
-        })
-})
-
-app.delete('/contactsList/:contactId', (req, res) => {
-    Contactsdb.findOneAndRemove({ _id: req.params.contactId })
-        .then(removedContact => {
-            res.json(removedContact);
-        })
-        .catch(error => {
-            res.send(error);
-            console.log(error);
-        })
-})
 
 
 

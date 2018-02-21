@@ -21,5 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 /config
+/keys.js
 /scripts
-
+/data
+/logpath

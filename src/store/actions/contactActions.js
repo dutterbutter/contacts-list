@@ -93,10 +93,12 @@ export const fetchUserStart = () => {
     }
 }
 
-export const fetchUserSuccess = (payload) => {
+export const fetchUserSuccess = (_id, googleId, idToken) => {
     return {
         type: actionTypes.FETCH_USER_SUCCESS,
-        payload: payload
+        _id: _id,
+        googleId: googleId,
+        idToken: idToken
     }
 }
 
@@ -112,7 +114,8 @@ export const fetchUser = () => {
         dispatch(fetchUserStart());
         axios.get('/api/current_user')
         .then(result => {
-            dispatch(fetchUserSuccess(result.data))
+            //console.log(result.data);
+            dispatch(fetchUserSuccess(result.data._id, result.data.googleId, result.data.idToken))
         })
         .catch(err => {
             dispatch(fetchUserFail(err))
@@ -134,10 +137,12 @@ export const addContact = (name, email, streetAddress, postalCode, phoneNumber, 
     }
 }
 
-export const fetchContacts = () => {
+export const fetchContacts = (_user) => {
+    console.log("actions", _user)
     return dispatch => {
+        // console.log("before", getState())
         dispatch(fetchContactsStart())
-        axios.get('http://localhost:8080/contactsList')
+        axios.get('http://localhost:8080/contactsList/' + _user)
             .then(res => {
                 const fetchedContacts = [];
                 for (let key in res.data) {
@@ -146,6 +151,7 @@ export const fetchContacts = () => {
                         id: key
                 })
         }
+        //console.log("after", getState())
             dispatch(fetchContactsSuccess(fetchedContacts))
         })
         .catch(err => {

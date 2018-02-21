@@ -1,19 +1,16 @@
 import React from "react";
 import classes from './TopNav.css';
 import SideDrawerToggle from "../SideDrawer/SideDrawerToggle";
+import Header from "../../../../containers/auths/Header";
 
-// 
 
 const topNav = (props) => (
 
     <header className={classes.TopNavBar}>
       <SideDrawerToggle drawerToggleClicked={props.drawerToggleClicked} />
     
-      Dustin Contact
+      <Header/>
     
-      {/* <nav>
-        <li>this</li>
-      </nav> */}
     </header>
   
 );
