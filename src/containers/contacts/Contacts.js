@@ -110,8 +110,8 @@ class AddContactsInfo extends Component {
                         value={contactFormElement.attr.value}
                         changed={(event) => this.inputChangedHandler(event, contactFormElement.id)} />
                 ))}
-                <button>SAVE</button>
-                <button>CANCEL</button>
+                <button className="btn btn-primary">SAVE</button>
+                <button className="btn btn-primary">CANCEL</button>
             </form> 
         );
         if(this.props.loading) {

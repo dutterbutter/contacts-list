@@ -24,8 +24,8 @@ module.exports = app => {
         })
     });
 
-    app.get('/contactsList/:_user',  (req, res) => {
-        console.log("this is", req.params._user);
+    app.get('/contactsList',  (req, res) => {
+        console.log("this is IT!!!!!!1", req.user.id);
         Contactsdb.find({})
             .then(contact => {
                 res.json(contact)
