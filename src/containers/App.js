@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../store/actions/index";
-
+import { Link } from "react-router-dom";
 import AddContactButton from "../components/UI/Navigation/Button/AddContact";
 import Layout from "../hoc/Layout/Layout";
 import ContactModal from "../components/UI/Modal/ContactModal";
 import AddContactsInfo from "./contacts/Contacts";
 import ContactList from "./contacts/ContactList";
-import Test from "../components/test";
+import Aux from '../hoc/Aux/Aux';
+import TopNav from "../components/UI/Navigation/NavBar/TopNav";
+import Home from "../components/LandingPages/Home";
 
 class App extends Component {
   state = {
@@ -16,45 +18,36 @@ class App extends Component {
   };
 
   componentDidMount() {
+    //console.log(this.props._user)
     this.props.onFetchUsers();
   }
 
-  addContactHandler = () => {
-    this.setState({ addContactClicked: true });
-  };
-
-  modalClosedHandler = () => {
-    this.setState({ addContactClicked: false });
-  };
 
   render() {
+
     const contactAdded = props => {
-      return <ContactList />;
+      return <ContactList _user={this.props._user} />;
     };
 
-    const test = props => {
-      return <Test />;
+    const home = props => {
+      return <Home />;
     };
 
     return (
-      <Layout>
-        <ContactModal
-          show={this.state.addContactClicked}
-          closed={this.modalClosedHandler}
-        >
-          <AddContactsInfo
-            closed={this.modalClosedHandler}
-            history={this.props.history}
-          />
-        </ContactModal>
-        <AddContactButton addContactInputModalShow={this.addContactHandler} />
-
+      <Aux>
+        <TopNav /> 
+         <Route path={"/"} exact component={home} />   
         <Route path={"/contactsList"} component={contactAdded} />
-       
-      </Layout>
+      </Aux>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    _user: state.auth._id
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -62,4 +55,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
