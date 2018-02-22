@@ -7,11 +7,22 @@ Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-Prerequisites
+<strong>Prerequisites</strong>
 
+<p>You will have to go to the GOOGLE DEVELOPER CONSOLE, here https://console.developers.google.com/ and if you haven't done so in the past create an account in order to utilize the Google OAuth for the contacts application.</p>
+
+<p>Once you have an account, create a project, name it whatever you want.</p>
+<p>Navigate to credentials, select create credentials --> OAuth ClientID</p>
+<p>Give your project a product name</p>
+<p>Select web application </p>
+<p>In Authorized JS origin type your localhost://PORT if you are in dev workflow</p>
+<p>In Authorized redirect URI's type same localhost://PORT/auth/google/callback</p>
+
+<p> This will generate a client ID and Client Secret which you simply need to work with Passport.js</p>
+
+<p>Passport documentation: http://www.passportjs.org/docs/google/ </p>
 
 Make sure you are running a current version of node, react and express! 
-
 
 Installing
 

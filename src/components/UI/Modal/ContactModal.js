@@ -5,7 +5,8 @@ import Backdrop from "../Backdrop/Backdrop";
 
 
 const contactModal = (props) => {
-  //console.log("modal", props.show)
+  let combinedButtonClasses = ["btn btn-warning", classes.Button];
+  
   return (
     
     <Aux>
@@ -19,7 +20,7 @@ const contactModal = (props) => {
       >
         {props.children}
         <div className={classes.MobileButton}>
-          <button className= "btn btn-primary" onClick={props.closed}>Back</button>
+          <button className= {combinedButtonClasses.join(" ")} onClick={props.closed}>Back</button>
         </div>
       </div>
     </Aux>

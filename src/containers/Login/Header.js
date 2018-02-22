@@ -12,13 +12,13 @@ class Header extends Component {
       case false:
         return (
           <div>
-            <a href="/auth/google">Login With Google</a>
+            <button className="btn btn-outline-light"><a href="/auth/google">Login With Google</a></button>
           </div>
         );
       default:
         return (
           <div>
-            <a href="/api/logout">Logout</a>
+            <button className="btn btn-outline-light"><a href="/api/logout">Logout</a></button>
           </div>
         );
     }

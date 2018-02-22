@@ -33,6 +33,13 @@
         
     }
     .MobileButton {
-        display: block;
+        display: inline-block;
+    }
+    .Button {
+
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 5px;
     }
 }
+

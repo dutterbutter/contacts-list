@@ -93,7 +93,8 @@ class AddContactsInfo extends Component {
    }
 
     render() { 
-         //console.log(this.props.auth)
+        let combinedButtonClasses = ["btn btn-warning", classes.Button];
+
         const contactFormArray = [];
         for (let key in this.state.contactForm) {
             contactFormArray.push({
@@ -111,8 +112,7 @@ class AddContactsInfo extends Component {
                         value={contactFormElement.attr.value}
                         changed={(event) => this.inputChangedHandler(event, contactFormElement.id)} />
                 ))}
-                <button className="btn btn-primary">SAVE</button>
-                <button className="btn btn-primary">CANCEL</button>
+                <button className={combinedButtonClasses.join(" ")}>SAVE</button>
             </form> 
         );
         if(this.props.loading) {

@@ -10,9 +10,8 @@ import Aux from "../../hoc/Aux/Aux";
 
 class ContactList extends Component {
 
-
   componentDidMount() {
-    //console.log("I need this prop", this.props._user);
+   
     this.props.onFetchContacts(this.props._user);
   }
 

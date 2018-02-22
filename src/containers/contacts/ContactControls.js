@@ -4,9 +4,7 @@ import * as actions from '../../store/actions/index';
 
 import classes from './ContactControls.css'
 
-
 import Aux from '../../hoc/Aux/Aux'
-
 
 class ContactControls extends Component {
 

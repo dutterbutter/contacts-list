@@ -5,8 +5,6 @@ import ContactControls from "../../containers/contacts/ContactControls";
 import ContactModal from "../UI/Modal/ContactModal";
 import ShowContact from "./ShowContact";
 
-
-
 class Contact extends Component {
   state = {
     contactClicked: false

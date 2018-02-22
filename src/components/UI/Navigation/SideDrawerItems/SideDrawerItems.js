@@ -7,9 +7,10 @@ class SideDrawerItems extends Component {
 
 
   componentDidMount() {
- 
-    this.props.onFetchContacts();
+    this.props.onFetchContacts();  
   }
+
+  
 
   render() { 
 
@@ -21,8 +22,8 @@ class SideDrawerItems extends Component {
       <li className={classes.SideDrawerListItems}><i className={combinedClasses.join(" ")}>contacts</i>
         Contacts <strong className={classes.number}> ({numberOfContacts})</strong>
       </li>
-      <li className={classes.SideDrawerListItems}><i className={combinedClasses.join(" ")}>star</i>Frequent</li>
-      <li className={classes.SideDrawerListItems}><i className={combinedClasses.join(" ")}>content_copy</i>Duplicates</li>
+      {/* <li className={classes.SideDrawerListItems}><i className={combinedClasses.join(" ")}>star</i>Frequent</li>
+      <li className={classes.SideDrawerListItems}><i className={combinedClasses.join(" ")}>content_copy</i>Duplicates</li> */}
     </ul>
      )
   }

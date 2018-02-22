@@ -27,7 +27,7 @@ module.exports = app => {
     app.get('/contactsList/:id', (req, res) => {
         
         Contactsdb.find({_user: req.params.id})
-            .then(contact => {
+            .then(contact => {    
                 res.json(contact)
             })
             .catch(err => {
