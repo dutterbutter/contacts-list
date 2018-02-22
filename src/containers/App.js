@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../store/actions/index";
-import { Link } from "react-router-dom";
 import ContactList from "./contacts/ContactList";
 import Aux from '../hoc/Aux/Aux';
 import TopNav from "../components/UI/Navigation/NavBar/TopNav";

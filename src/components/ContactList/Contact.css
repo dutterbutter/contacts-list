@@ -6,6 +6,7 @@
 
 .NameItem {
     top: 20px;
+    font-size: 1.2rem;
 }
 
 .ContactItem:hover{
@@ -16,11 +17,13 @@
 
 .EmailView {
     top: 20px;
+    font-size: 1.2rem;
 }
 
 .PhoneNumberView {
     top: 20px;
     width: auto;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
@@ -39,5 +42,6 @@
     .NameItem {
         width: auto;
         padding-right: 70px;
+        font-size: 1.4rem;
     }
 }

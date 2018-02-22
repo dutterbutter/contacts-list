@@ -10,19 +10,12 @@ const passport       = require('passport');
 const Contactsdb     = require('./model/Contactdb');
 const UsersModel     = require('./model/Users');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-//const loginRequired  = require('./middlewares/loginRequired');
 const keys           = require('./config/keys');
 require('./services/passport');
 
 PORT = process.env.PORT || 8080 
 
 app = express();
-// app.use(express.cookieParser());
-// app.use(express.bodyParser());
-// app.use(express.session({ secret: 'anything' }));
-
-
-
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors());
@@ -41,7 +34,6 @@ require('./routes/contactRoutes')(app);
 const MONGO_CONNECTION_STRING = 'mongodb://localhost:27017/data'
 mongoose.connect(MONGO_CONNECTION_STRING);
 const connection = mongoose.connection;
-
 
 
 connection.on("open", () => {

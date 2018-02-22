@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
-
 import AddContactButton from "../../components/UI/Navigation/Button/AddContact";
 import Layout from "../../hoc/Layout/Layout";
 import ContactModal from "../../components/UI/Modal/ContactModal";
 import AddContactsInfo from "../contacts/Contacts";
-import ContactList from "../contacts/ContactList";
-import Aux from "../../hoc/Aux/Aux";
 
 class Main extends Component {
   state = {
@@ -22,9 +18,6 @@ class Main extends Component {
   };
 
   render() {
-    const contactAdded = props => {
-      return <ContactList />;
-    };
 
     return (
       <Layout>

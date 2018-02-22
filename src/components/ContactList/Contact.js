@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
 import classes from "./Contact.css";
 import Avatar from "../UI/Avatar/Avatar";
 import ContactControls from "../../containers/contacts/ContactControls";

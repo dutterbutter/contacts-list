@@ -23,9 +23,10 @@ class AddContactsInfo extends Component {
        email: {
             elementType: "input",
             elementAttr: {
-                type: 'text',
+                type: 'email',
                 placeholder: 'Email Address'
         },
+        value: ''
     },
        phoneNumber: {
             elementType: "input",

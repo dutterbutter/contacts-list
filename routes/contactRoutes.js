@@ -24,9 +24,8 @@ module.exports = app => {
         })
     });
 
-    app.get('/contactsList/:id',  (req, res) => {
-        console.log(req, req.user)
-
+    app.get('/contactsList/:id', (req, res) => {
+        
         Contactsdb.find({_user: req.params.id})
             .then(contact => {
                 res.json(contact)
@@ -37,7 +36,7 @@ module.exports = app => {
             })
     })
     
-    app.delete('/contactsList/:contactId',  (req, res) => {
+    app.delete('/contactsList/:contactId', (req, res) => {
         Contactsdb.findOneAndRemove({ _id: req.params.contactId })
             .then(removedContact => {
                 res.json(removedContact);
