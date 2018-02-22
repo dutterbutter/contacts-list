@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 <p>You will have to go to the GOOGLE DEVELOPER CONSOLE, here https://console.developers.google.com/ and if you haven't done so in the past create an account in order to utilize the Google OAuth for the contacts application.</p>
 
-<p>Once you have an account, create a project, name it whatever you want.</p>
+<li>Once you have an account, create a project, name it whatever you want.</li>
 <p>Navigate to credentials, select create credentials --> OAuth ClientID</p>
 <p>Give your project a product name</p>
 <p>Select web application </p>
