@@ -31,10 +31,19 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/contactRoutes')(app);
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(__dirname+'/build'))
+}
+
+
 const MONGO_CONNECTION_STRING = 'mongodb://localhost:27017/data'
 mongoose.connect(MONGO_CONNECTION_STRING);
 const connection = mongoose.connection;
 
+
+app.get('*', (req, res) => {
+    res.sendFile(__dirname+'/build/index.html')
+})
 
 connection.on("open", () => {
     console.log("We are connected to mongo!");
