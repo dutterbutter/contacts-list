@@ -4,7 +4,7 @@
   "private": true,
   "proxy": {
     "/auth/google": {
-      "target": "https://contacts-web-app.herokuapp.com"
+      "target": "http://contacts-web-app.herokuapp.com"
     }
   },
   "dependencies": {
