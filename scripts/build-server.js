@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 let homepage = path.join(__dirname, "../build/index.html");
-let serverPort = process.env.PORT || 3000;
+let serverPort = process.env.PORT || 8080;
 app.set("port", serverPort);
 
 app.use(express.static(path.join(__dirname, "../build")));
