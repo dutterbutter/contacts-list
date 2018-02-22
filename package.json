@@ -68,10 +68,12 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    
+    "start:dev": "node scripts/start.js",
+    "start": "node scripts/build-server.js",
+    "heroku-prebuild": "npm install && npm run build",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+    "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
     "eslint": "^4.17.0",
