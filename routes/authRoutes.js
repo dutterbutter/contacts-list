@@ -19,7 +19,7 @@ module.exports = (app) => {
             res.redirect('/contactsList');
     });
 
-    app.get('/api/logout', (req, res) => {
+    app.get('/logout', (req, res) => {
         req.logout();
         res.redirect('/')
     })
