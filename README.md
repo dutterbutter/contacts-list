@@ -36,7 +36,7 @@ Now that you have a dev.js file properly configured to your own Google OAuth Cli
 
 ### Installing
 
-Next all you have to is install the dependecies below and then start your development server.
+Next all you have to is install the dependecies below, start mongodb, start up the express server and then start your development server.
 
 ```
 NPM INSTALL
