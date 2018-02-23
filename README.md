@@ -16,7 +16,7 @@ What things you need to install the software and how to install them. In order t
 4. Enable the API
 5. Select Credentials on the side menu
 6. Click CREATE CREDENTIALS > OAuth Client ID > Configure Consent Screen
-7. Enter Whatever you would like in the Produce name shown to users > SAVE 
+7. Enter Whatever you would like in the Product name shown to users > SAVE 
 8. Select the Web Application radio button
 9. Under Authorized Javascript Origins input http://localhost:8080
 10. Under Authorized redirect URI's input http://localhost:8080/auth/google/callback AND (for most users) http://localhost:3000/auth/google/callback > SAVE
