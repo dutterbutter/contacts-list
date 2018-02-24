@@ -57,7 +57,7 @@ nodemon server.js
 Lastly, start the development server 
 
 ```
-npm run start
+npm start
 ```
 
 ## Built With
