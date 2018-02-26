@@ -12,7 +12,9 @@ These instructions will get you a copy of the project up and running on your loc
 node version 8.9.4 and greater
 ```
 
-What things you need to install the software and how to install them. In order to utilize the Google OAuth authentication you will first need to set up an account, create a project, set up the project for OAuth, enable the Google+ API and generate a CLIENTID and CLIENT SECRET, lastly place those generated keys into the dev.js file. Below are a more detailed set of instructions in order to achieve a proper set up. First, navigate to <a href= "https://console.developers.google.com" target="_blank">Google Developer Console</a> and if you haven't already done so create an account and then create a project. To create a project, simply click the drop down titled "Select a Project" and click the plus sign. Below are numbered instructions to continue with the proper set up.
+What things you need to install the software and how to install them. In order to utilize the Google OAuth authentication you will first need to set up an account, create a project, set up the project for OAuth, enable the Google+ API and generate a CLIENTID and CLIENT SECRET, lastly place those generated keys into the dev.js file. Below are a more detailed set of instructions in order to achieve a proper set up. First, navigate to <a href= "https://console.developers.google.com" target="_blank">Google Developer Console</a> and if you haven't already done so create an account and then create a project. To create a project, simply click the drop down titled "Select a Project" and click the plus sign. Below are numbered instructions to continue with the proper set up. 
+
+Before you begin the below steps within the Google Console, make sure the project you just created is listed in the dropdown menu! 
 
 1. Once project has been created, select APIs & Services in the side menu
 2. Click ENABLE APIS AND SERVICES at the top of the Dashboard
