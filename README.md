@@ -23,7 +23,7 @@ What things you need to install the software and how to install them. In order t
 7. Enter Whatever you would like in the Product name shown to users > SAVE 
 8. Select the Web Application radio button
 9. Under Authorized Javascript Origins input http://localhost:8080
-10. Under Authorized redirect URI's input http://localhost:8080/auth/google/callback AND (for most users) http://localhost:3000/auth/google/callback > SAVE
+10. Under Authorized redirect URI's input http://localhost:8080/auth/google/callback AND  http://localhost:3000/auth/google/callback > SAVE
 11. In your code editor, create a new file in the config folder named dev.js and input the following
 12. NOTE its important you name the file in the config folder dev.js, unless you want to change the if statement in the keys.js file
 
